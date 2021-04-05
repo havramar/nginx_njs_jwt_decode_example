@@ -10,7 +10,7 @@ Notes about CLI approach:
 * `console.log` being available ([see all other global objects available](https://nginx.org/en/docs/njs/cli.html))
 * can't use `export`
 ```bash
-cat jwt_working_example_njs_cli.js | docker run --rm -i nginx njs -q -
+$ cat jwt_working_example_njs_cli.js | docker run --rm -i nginx njs -q -
 ```
 
 ## Testing script with Nginx via Docker
@@ -66,7 +66,7 @@ Inputs:
 
 Use in [jwt_working_example_njs_cli.js](jwt_working_example_njs_cli.js):
 ```javascript
-console.log(JSON.stringify(r));
+console.log(JSON.stringify(debug_this_object));
 ```
 
 ### Nginx
@@ -75,6 +75,8 @@ Use in [jwt.js](jwt.js):
 ```javascript
 r.error(JSON.stringify(r));
 ```
+Request object is injected as `r` variable.
+
 Output can be found in CLI output where Docker container was run.
 
 ## Reference
