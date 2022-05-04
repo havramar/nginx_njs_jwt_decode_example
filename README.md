@@ -37,7 +37,7 @@ Inputs:
       "typ": "JWT"
     }
     ```
-* paypload
+* payload
     ```
     {
       "sub": "1234567890",
